@@ -1,0 +1,10 @@
+name: color-ai-mcp
+description: "MEOK AI Labs — Color tools for AI agents and LLMs"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/color-ai-mcp
+license: MIT
+categories: [Design, Utilities]
+tags: [color, color-palette, color-conversion, hex-rgb, design-tools]
+runtime: python
+entrypoint: server.py
