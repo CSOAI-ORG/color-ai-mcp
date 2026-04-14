@@ -1,10 +1,42 @@
 name: color-ai-mcp
-description: "MEOK AI Labs — Color tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/color-ai-mcp
-license: MIT
-categories: [Design, Utilities]
-tags: [color, color-palette, color-conversion, hex-rgb, design-tools]
-runtime: python
-entrypoint: server.py
+description: MCP server for color manipulation and accessibility tools.
+version: 1.0.0
+tools:
+- name: hex_to_rgb
+  description: Convert hex color to RGB, HSL, and HSV.
+  parameters:
+  - name: hex_color
+    type: string
+    required: true
+- name: generate_palette
+  description: 'Generate color palette. Schemes: complementary, analogous, triadic,
+    split_complementary, monochromatic, tetradic.'
+  parameters:
+  - name: base_hex
+    type: string
+    required: true
+  - name: scheme
+    type: string
+    required: false
+  - name: count
+    type: integer
+    required: false
+- name: check_contrast
+  description: Check WCAG contrast ratio between two colors.
+  parameters:
+  - name: foreground
+    type: string
+    required: true
+  - name: background
+    type: string
+    required: true
+- name: suggest_accessible
+  description: Suggest accessible text colors for a given background. Targets WCAG
+    AA by default.
+  parameters:
+  - name: background
+    type: string
+    required: true
+  - name: min_ratio
+    type: number
+    required: false

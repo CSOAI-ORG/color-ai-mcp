@@ -1,23 +1,80 @@
 {
   "name": "color-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Color tools for AI agents and LLMs",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/color-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "MCP server for color manipulation and accessibility tools.",
+  "version": "1.0.0",
   "tools": [
-    "hex_to_rgb",
-    "generate_palette",
-    "check_contrast",
-    "suggest_accessible"
-  ],
-  "categories": [
-    "Design",
-    "Utilities"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "hex_to_rgb",
+      "description": "Convert hex color to RGB, HSL, and HSV.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "hex_color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hex_color"
+        ]
+      }
+    },
+    {
+      "name": "generate_palette",
+      "description": "Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "base_hex": {
+            "type": "string"
+          },
+          "scheme": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "base_hex"
+        ]
+      }
+    },
+    {
+      "name": "check_contrast",
+      "description": "Check WCAG contrast ratio between two colors.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "foreground": {
+            "type": "string"
+          },
+          "background": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "foreground",
+          "background"
+        ]
+      }
+    },
+    {
+      "name": "suggest_accessible",
+      "description": "Suggest accessible text colors for a given background. Targets WCAG AA by default.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "background": {
+            "type": "string"
+          },
+          "min_ratio": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "background"
+        ]
+      }
+    }
+  ]
 }

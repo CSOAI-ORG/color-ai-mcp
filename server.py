@@ -1,4 +1,9 @@
 """Color AI MCP Server — Color manipulation and accessibility tools."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import colorsys
 import math
 import time
@@ -34,8 +39,12 @@ def _relative_luminance(r: int, g: int, b: int) -> float:
     return 0.2126 * linearize(r) + 0.7152 * linearize(g) + 0.0722 * linearize(b)
 
 @mcp.tool()
-def hex_to_rgb(hex_color: str) -> dict[str, Any]:
+def hex_to_rgb(hex_color: str, api_key: str = "") -> dict[str, Any]:
     """Convert hex color to RGB, HSL, and HSV."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("hex_to_rgb"):
         return {"error": "Rate limit exceeded (50/day)"}
     try:
@@ -56,8 +65,12 @@ def hex_to_rgb(hex_color: str) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 5) -> dict[str, Any]:
+def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 5, api_key: str = "") -> dict[str, Any]:
     """Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("generate_palette"):
         return {"error": "Rate limit exceeded (50/day)"}
     try:
@@ -91,8 +104,12 @@ def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 
     return {"base": _rgb_to_hex(r, g, b), "scheme": scheme, "palette": colors}
 
 @mcp.tool()
-def check_contrast(foreground: str, background: str) -> dict[str, Any]:
+def check_contrast(foreground: str, background: str, api_key: str = "") -> dict[str, Any]:
     """Check WCAG contrast ratio between two colors."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("check_contrast"):
         return {"error": "Rate limit exceeded (50/day)"}
     try:
@@ -114,8 +131,12 @@ def check_contrast(foreground: str, background: str) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def suggest_accessible(background: str, min_ratio: float = 4.5) -> dict[str, Any]:
+def suggest_accessible(background: str, min_ratio: float = 4.5, api_key: str = "") -> dict[str, Any]:
     """Suggest accessible text colors for a given background. Targets WCAG AA by default."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("suggest_accessible"):
         return {"error": "Rate limit exceeded (50/day)"}
     try:
