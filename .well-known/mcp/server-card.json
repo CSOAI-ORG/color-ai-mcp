@@ -1,0 +1,53 @@
+{
+  "name": "color-ai",
+  "description": "Color Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/color-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "hex_to_rgb",
+      "description": "Convert hex color to RGB, HSL, and HSV."
+    },
+    {
+      "name": "generate_palette",
+      "description": "Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic."
+    },
+    {
+      "name": "check_contrast",
+      "description": "Check WCAG contrast ratio between two colors."
+    },
+    {
+      "name": "suggest_accessible",
+      "description": "Suggest accessible text colors for a given background. Targets WCAG AA by default."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Web & UX"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
