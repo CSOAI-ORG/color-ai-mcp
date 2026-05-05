@@ -1,53 +1,38 @@
-# Color AI MCP Server
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Color conversion, palette generation, and WCAG contrast checking
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/color-ai-mcp)](https://github.com/CSOAI-ORG/color-ai-mcp/stargazers)
+
+# ucolorU aiU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/color-ai-mcp)](https://www.npmjs.com/package/@meok-ai/color-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/color-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install color-ai-mcp
+# or
+npm install -g @meok-ai/color-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-### `hex_to_rgb`
-Convert hex color to RGB, HSL, HSV, and CSS formats with luminance calculation.
-
-**Parameters:**
-- `hex_color` (str): Hex color (e.g., '#ff6600')
-
-### `generate_palette`
-Generate color palette from a base color using various schemes.
-
-**Parameters:**
-- `base_hex` (str): Base hex color
-- `scheme` (str): Scheme — 'complementary', 'analogous', 'triadic', 'split_complementary', 'monochromatic', 'tetradic'
-- `count` (int): Number of colors (default 5)
-
-### `check_contrast`
-Check WCAG contrast ratio between two colors with AA/AAA compliance.
-
-**Parameters:**
-- `foreground` (str): Foreground hex color
-- `background` (str): Background hex color
-
-### `suggest_accessible`
-Suggest accessible text colors for a given background targeting WCAG AA/AAA.
-
-**Parameters:**
-- `background` (str): Background hex color
-- `min_ratio` (float): Minimum contrast ratio (default 4.5)
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
