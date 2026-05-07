@@ -1,3 +1,5 @@
+[![color-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/color-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/color-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/color-ai-mcp)](https://github.com/CSOAI-ORG/color-ai-mcp/stargazers)
