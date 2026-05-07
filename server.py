@@ -69,6 +69,11 @@ def hex_to_rgb(hex_color: str, api_key: str = "") -> dict[str, Any]:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        hex_color (str): The hex color to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -125,6 +130,13 @@ def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        base_hex (str): The base hex to analyze or process.
+        scheme (str): The scheme to analyze or process.
+        count (int): The count to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -195,6 +207,12 @@ def check_contrast(foreground: str, background: str, api_key: str = "") -> dict[
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        foreground (str): The foreground to analyze or process.
+        background (str): The background to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -253,6 +271,12 @@ def suggest_accessible(background: str, min_ratio: float = 4.5, api_key: str = "
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        background (str): The background to analyze or process.
+        min_ratio (float): The min ratio to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
