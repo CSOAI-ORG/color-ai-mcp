@@ -53,7 +53,23 @@ def _relative_luminance(r: int, g: int, b: int) -> float:
 
 @mcp.tool()
 def hex_to_rgb(hex_color: str, api_key: str = "") -> dict[str, Any]:
-    """Convert hex color to RGB, HSL, and HSV."""
+    """Convert hex color to RGB, HSL, and HSV.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -80,7 +96,22 @@ def hex_to_rgb(hex_color: str, api_key: str = "") -> dict[str, Any]:
 
 @mcp.tool()
 def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 5, api_key: str = "") -> dict[str, Any]:
-    """Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic."""
+    """Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -120,7 +151,23 @@ def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 
 
 @mcp.tool()
 def check_contrast(foreground: str, background: str, api_key: str = "") -> dict[str, Any]:
-    """Check WCAG contrast ratio between two colors."""
+    """Check WCAG contrast ratio between two colors.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -148,7 +195,23 @@ def check_contrast(foreground: str, background: str, api_key: str = "") -> dict[
 
 @mcp.tool()
 def suggest_accessible(background: str, min_ratio: float = 4.5, api_key: str = "") -> dict[str, Any]:
-    """Suggest accessible text colors for a given background. Targets WCAG AA by default."""
+    """Suggest accessible text colors for a given background. Targets WCAG AA by default.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
