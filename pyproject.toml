@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "color-ai-mcp"
-version = "1.0.3"
+version = "1.0.4"
 readme = "README.md"
 description = "MCP server for color ai. Features hex to rgb, generate palette, check contrast. From MEOK AI Labs."
 license = {file = "LICENSE"}
