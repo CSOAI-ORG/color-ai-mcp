@@ -1,0 +1,9 @@
+# color-ai-mcp - Auto-trigger Rules
+
+When the user asks about color, use color-ai-mcp tools: hex_to_rgb, generate_palette, check_contrast, suggest_accessible
+
+**Color AI MCP Server — Color manipulation and accessibility tools.**
+
+Install: `pip install color-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

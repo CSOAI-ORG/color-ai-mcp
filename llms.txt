@@ -1,0 +1,33 @@
+# color-ai-mcp
+# **Color AI MCP Server — Color manipulation and accessibility tools.**
+
+## Install
+```bash
+pip install color-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `hex_to_rgb`
+Convert hex color to RGB, HSL, and HSV.
+
+### `generate_palette`
+Generate color palette. Schemes: complementary, analogous, triadic, split_complementary, monochromatic, tetradic.
+
+### `check_contrast`
+Check WCAG contrast ratio between two colors.
+
+### `suggest_accessible`
+Suggest accessible text colors for a given background. Targets WCAG AA by default.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

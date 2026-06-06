@@ -1,7 +1,7 @@
-"""Color AI MCP Server — Color manipulation and accessibility tools."""
+"""
+Color AI MCP Server — Color manipulation and accessibility tools."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import colorsys
@@ -91,7 +91,7 @@ def hex_to_rgb(hex_color: str, api_key: str = "") -> dict[str, Any]:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("hex_to_rgb"):
@@ -154,7 +154,7 @@ def generate_palette(base_hex: str, scheme: str = "complementary", count: int = 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("generate_palette"):
@@ -230,7 +230,7 @@ def check_contrast(foreground: str, background: str, api_key: str = "") -> dict[
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("check_contrast"):
@@ -294,7 +294,7 @@ def suggest_accessible(background: str, min_ratio: float = 4.5, api_key: str = "
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
     if err := _rl(): return err
 
     if not _rate_check("suggest_accessible"):
@@ -327,5 +327,8 @@ def suggest_accessible(background: str, min_ratio: float = 4.5, api_key: str = "
             unique.append(s)
     return {"background": _rgb_to_hex(br, bg_, bb), "min_ratio": min_ratio, "suggestions": unique[:10]}
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

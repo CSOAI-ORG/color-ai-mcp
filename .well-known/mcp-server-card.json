@@ -1,0 +1,25 @@
+{
+  "name": "color-ai-mcp",
+  "title": "Color Ai Mcp",
+  "description": "MCP server for color ai. Features hex to rgb, generate palette, check contrast. From MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "hex_to_rgb"
+    },
+    {
+      "name": "generate_palette"
+    },
+    {
+      "name": "check_contrast"
+    },
+    {
+      "name": "suggest_accessible"
+    }
+  ]
+}
