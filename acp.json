@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "color-ai-mcp",
+    "description": "Color Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "color-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "hex_to_rgb",
+      "generate_palette",
+      "check_contrast",
+      "suggest_accessible"
+    ]
+  }
+}

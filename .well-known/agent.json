@@ -1,0 +1,59 @@
+{
+  "name": "color-ai-mcp",
+  "description": "Color Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/color-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "hex_to_rgb",
+      "name": "Hex To Rgb",
+      "description": "hex_to_rgb via color-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_palette",
+      "name": "Generate Palette",
+      "description": "generate_palette via color-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_contrast",
+      "name": "Check Contrast",
+      "description": "check_contrast via color-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "suggest_accessible",
+      "name": "Suggest Accessible",
+      "description": "suggest_accessible via color-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
